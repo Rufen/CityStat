@@ -1,0 +1,19 @@
+Dept,Metric,Goal,15-Mar,15-Apr,15-May,15-Jun,15-Jul,Aug-15
+Assessing,% of abatements applied for  (Less than 5%),5,1,1,1,1,,
+Assessing,% of assessment challenges made to Appellate Tax Board (Less than 25%),25,23,23,8,17,19,19
+Assessing,% of assessment challenges upheld by Appellate Tax Board (More than 85%),85,0,0,0,0,,
+Assessing,# exemptions applied for,,593,593,593,593,209,280
+Assessing,# of exemptions issued,,443,456,462,467,1,1
+Procurement,Amount of $ saved through prompt pay discount,1540,1360,3250,1250,2926,1515,3822
+Procurement,Amount of $ lost through prompt pay discount,0,2173,4379,503,2604,24,42
+Procurement,Amount of $ saved by going out to bid,,616986,642762,463814,289867,1024757,176656
+Treasury,% of bills being paid online,85,83,0,0,80,0,0
+Treasury,% of bills paid via mail/in person,,17,0,0,20,0,0
+Treasury,% of committments collected,100,99,0,0,98,0,0
+Treasury,# of payments received,,23257,0,0,28050,0,0
+Treasury,# of payments processed within 5 days of receipt %,100,100,0,0,0,0,0
+Treasury,# of excise refunds received,,162,166,140,140,144,183
+Treasury,# of excise refunds processed within 2 weeks of adjustment issuance %,100,98,93,93,93,144,122
+DPW: Utilities,# of HCF's purchased,,390229,345700,0,0,0,0
+DPW: Utilities,# of HCF's billed,312183,182627,200375,0,0,324748,0
+DPW: Utilities,Amount of unaccounted for water %,12,32,32,0,0,0,0

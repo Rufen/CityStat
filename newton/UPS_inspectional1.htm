@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Inspectional Services Dept | City of Newton</title>	  
+	  <link rel="stylesheet" type="text/css" href="../css/newton.css">
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script src="../js/highcharts.js"></script>
+      <script src="../js/modules/exporting.js"></script>
+	  <script src="../js/modules/data.js"></script>
+      <script type="text/javascript">
+		$(document).ready(function() {
+       
+			var url='csv/UnparalleledPublicSafety1.csv'
+			$.get(url, function(csv) {
+		var options = { 
+
+        chart: {
+               type: 'column',
+				borderWidth: 2,
+				plotBorderWidth: 1,
+			   marginTop:'100',
+			   height:'500',
+               style: {
+
+                 fontSize: '20px'
+                 },
+                 zoomType: 'x'
+                  
+        },
+                title: {
+                text: 'Unparalleled Public Safety<br>Inspectional - Illegal apartment complaints'
+        },
+                 subtitle: {
+                text: '<a href="http://www.newtonma.gov">City of Newton, MA</a>',
+                
+        },
+               
+            credits: {
+            text: 'newtonma.gov',
+            href: 'http://www.newtonma.gov'
+        },              
+        yAxis: {
+                  allowDecimals:true,
+                  title: {
+                  text: 'Value',                              
+                 },
+               labels: {
+                format: '{value}'
+                },  
+                  minorTickInterval : 0.5
+                  //minTickInterval : 20
+                  
+          },
+               xAxis: {
+                  //tickInterval:3,
+                  //title: {
+                  //text: options[0].data,   
+                  //text: ' '
+                         
+                  //},
+				  categories: ['Goals', 'March 2015', 'April 2015', 'May 2015', 'June 2015', 'July 2015', 'August 2015', 'September 2015', 'October 2015', 'November 2015', 'December 2015'],
+                  labels: {
+                  rotation: 20
+                 //categories: options[0].data                             
+                  }
+          },
+		  plotOptions: {
+				column: {
+					dataLabels: {
+						enabled: true
+					}
+				}
+			},		  
+	        tooltip: {
+            shared: true,
+            useHTML: true,
+            //headerFormat: '<small>{point.key}</small><table>',
+			headerFormat: '<u>{point.x}</u><table>',
+            pointFormat: '<tr><td style="color: {series.color}">{series.name}: </td>' +
+                '<td style="text-align: right">{point.y}</td></tr>',
+            footerFormat: '</table>',
+            valueDecimals: 0
+        },
+          data: {
+                switchRowsAndColumns: true, 
+				//startRow: 3,
+				endRow: 25, 
+				startColumn: 1,
+				endColumn: 11,			
+              seriesMapping: [{ }],
+                   csv: csv,
+              itemDelimiter: ','
+          },//end of data
+          exporting: {
+                buttons: {
+                    contextButton: {
+                        menuItems: [{
+                            textKey: 'printChart',
+                            onclick: function () {
+                              this.print();
+                            }
+                          }, {
+                            separator: true
+                          }, {
+                            textKey: 'downloadPNG',
+                            onclick: function () {
+                                this.exportChart();
+                            }
+                        }, {
+                            textKey: 'downloadPDF',
+                            onclick: function () {
+                                this.exportChart({
+                                    type: 'application/pdf'
+                                });
+                            }
+                        }, {
+                            text: Highcharts.getOptions().lang.downloadCSV || "Download CSV Excel file",
+                            onclick: function () {
+                                Highcharts.post('http://www.highcharts.com/studies/csv-export/csv.php', {
+                                    csv: this.getCSV()
+                                });
+                            }
+                        }]
+                    }
+                }
+            }//end of exporting csv
+
+            }; //option ends
+
+           $('#container').highcharts(Highcharts.merge(options));
+			var chart = $('#container').highcharts();
+			var series = chart.series[0];var series1 = chart.series[1];var series2 = chart.series[2];
+			var series3 = chart.series[3];var series4 = chart.series[4];var series5 = chart.series[5];var series6 = chart.series[6];var series7 = chart.series[7];var series8 = chart.series[8];
+			var series9 = chart.series[9];var series10 = chart.series[10];var series11 = chart.series[11];var series12 = chart.series[12];var series13 = chart.series[13];var series14 = chart.series[14];
+			var series15 = chart.series[15];var series16 = chart.series[16];var series17 = chart.series[17];
+			var series18 = chart.series[18];var series19 = chart.series[19];var series20 = chart.series[20];var series21 = chart.series[21];var series22 = chart.series[22];var series23 = chart.series[23];
+			series.remove();series1.remove();series2.remove();
+			series3.remove();series4.remove();series5.remove();series6.remove();series7.remove();series8.remove();
+			series9.remove();series10.remove();series11.remove();series12.remove();series13.remove();series14.remove();
+			series15.remove();series16.remove();series17.remove();
+			series18.remove();series19.remove();series20.remove();series21.remove();series22.remove();series23.remove();
+         });//end of cvs function
+           $('#downloadcsv').click(function () {            
+            window.open(url);
+           });//end of download function
+       
+      });//end of document ready function
+      
+      </script>
+   </head>
+   <body>
+
+<div id="container" style="min-width: 310px; height: 500px; margin: 0 auto">
+</div><center><button id="downloadcsv" class="newton_download_csv">Download CSV</button></center>
+</body>
+</html>

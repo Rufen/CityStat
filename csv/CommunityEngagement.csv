@@ -1,0 +1,24 @@
+Department,Metric,Goal,Current,
+DPW: Customer Service,Average hold time for callers (seconds),30,131,0
+DPW: Customer Service,Total # of requests entered into 311,,4868,0
+DPW: Customer Service,# of requests entered via Customer Service staff (%),45,47,0
+DPW: Customer Service,# of requests entered via citizen portal (%),45,48,0
+DPW: Customer Service,# of requests entered via Smart Phone App (%),10,5,0
+DPW: Customer Service,# of request entered via See Click Fix (%),5,0,0
+DPW: Customer Service,# of requests completed within designated SLA by assigned staff (%),95,93,0
+DPW: Environmental Affairs,# of missed trash pickups ,145,0,0
+DPW: Environmental Affairs,# of repeat missed trash from last 6 months,0,0,0
+DPW: Environmental Affairs,# of missed recycling pickups ,65,0,0
+DPW: Environmental Affairs,# of repeat missed recycling from last 6 months,0,0,0
+DPW: Environmental Affairs,# of missed yard waste pickups for each day of the month,0,0,0
+DPW: Environmental Affairs,# of bulky item requests scheduled per month,0,0,0
+Health & Human Services,total # of clients seen,0,108,0
+Law,Total Claims,0,103,0
+Law,Number of claims closed within 30 days %,100,69,0
+Parks and Recreation (Work Orders),# of work orders submitted,0,80,0
+Parks and Recreation (Work Orders),# of work orders completed within 5 business days %,85,93.7,0
+Treasury,# of calls answered by staff %,95,70,0
+Treasury,# of calls to voicemail %,5,30,0
+Treasury,# of voicemails returned within one business day %,100,100,0
+Veterans Service Center,Number of returning attendees,25,25,0
+Veterans Service Center,Number of new attendees,5,10,0

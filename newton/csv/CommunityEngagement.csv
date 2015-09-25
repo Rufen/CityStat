@@ -1,0 +1,20 @@
+Department,Metric,Goal,15-Mar,15-Apr,15-May,15-Jun,15-Jul,Aug-15
+DPW: Customer Service,Average Speed of Phone Call Answer (seconds),30,131,65,41,14,12,14
+DPW: Customer Service,Total # of requests entered into 311,,4868,3714,3395,3571,3552,3711
+DPW: Customer Service,# of requests entered via Customer Service staff (%),45,47,58,54,58,58,58
+DPW: Customer Service,# of requests entered via citizen portal (%),45,48,38,39,37,37,37
+DPW: Customer Service,# of requests entered via Smart Phone App (%),10,5,4,7,5,5,5
+DPW: Customer Service,# of requests completed within designated SLA by assigned staff (%),95,93,97,91,96,96,94
+DPW: Environmental Affairs,# of missed trash pickups ,117,152,112,105,131,131,131
+DPW: Environmental Affairs,# of missed recycling pickups ,50,0,45,57,40,40,97
+DPW: Environmental Affairs,# of bulky item requests scheduled per month,0,637,1431,1646,1673,1673,1672
+Health & Human Services,total # of clients seen,0,108,117,94,0,88,81
+Law,Total Claims,,103,41,19,18,18,23
+Law,Number of claims closed within 30 days %,,69,30,3,4,4,10
+Parks and Recreation (Work Orders),# of work orders submitted,0,80,68,59,45,45,32
+Parks and Recreation (Work Orders),# of work orders completed within 5 business days %,85,93.7,53,84,97,97,84
+Treasury,# of calls answered by staff %,95,70,0,0,0,0,0
+Treasury,# of calls to voicemail %,5,30,0,0,0,0,0
+Treasury,# of voicemails returned within one business day %,100,100,0,0,0,0,0
+Veterans Service Center,Number of returning attendees,25,25,20,70,54,28,30
+Veterans Service Center,Number of new attendees,5,10,5,22,0,15,9

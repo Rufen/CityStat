@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>DPW | City of Newton</title>	  
+	  <link rel="stylesheet" type="text/css" href="../css/newton.css">
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script src="../js/highcharts.js"></script>
+      <script src="../js/modules/exporting.js"></script>
+	  <script src="../js/modules/data.js"></script>
+      <script type="text/javascript">
+		$(document).ready(function() {
+       
+			var url='csv/UnparalleledPublicSafety1.csv'
+			$.get(url, function(csv) {
+		var options = { 
+
+        chart: {
+               type: 'column',
+				borderWidth: 2,
+				plotBorderWidth: 1,
+			   marginTop:'100',
+			   height:'500',
+               style: {
+
+                 fontSize: '20px'
+                 },
+                 zoomType: 'x'
+                  
+        },
+                title: {
+                text: 'Unparalleled Public Safety<br>DPW: Transportation - Street light outages'
+        },
+                 subtitle: {
+                text: '<a href="http://www.newtonma.gov">City of Newton, MA</a>',
+                
+        },
+               
+            credits: {
+            text: 'newtonma.gov',
+            href: 'http://www.newtonma.gov'
+        },              
+        yAxis: {
+                  allowDecimals:true,
+                  title: {
+                  text: 'Value',                              
+                 },
+               labels: {
+                format: '{value}'
+                },  
+                  minorTickInterval : 0.5
+                  //minTickInterval : 20
+                  
+          },
+               xAxis: {
+                  //tickInterval:3,
+                  //title: {
+                  //text: options[0].data,   
+                  //text: ' '
+                         
+                  //},
+				  categories: ['Goals', 'March 2015', 'April 2015', 'May 2015', 'June 2015', 'July 2015', 'August 2015', 'September 2015', 'October 2015', 'November 2015', 'December 2015'],
+                  labels: {
+                  rotation: 20
+                 //categories: options[0].data                             
+                  }
+
+          },
+	        tooltip: {
+            shared: true,
+            useHTML: true,
+            //headerFormat: '<small>{point.key}</small><table>',
+			headerFormat: '<u>{point.x}</u><table>',
+            pointFormat: '<tr><td style="color: {series.color}">{series.name}: </td>' +
+                '<td style="text-align: right">{point.y} </td></tr>',
+            footerFormat: '</table>',
+            valueDecimals: 0
+        },
+          data: {
+                switchRowsAndColumns: true, 
+				//startRow: 3,
+				endRow: 1, 
+				startColumn: 1,
+				endColumn: 11,			
+              seriesMapping: [{ }],
+                   csv: csv,
+              itemDelimiter: ','
+          },//end of data
+          exporting: {
+                buttons: {
+                    contextButton: {
+                        menuItems: [{
+                            textKey: 'printChart',
+                            onclick: function () {
+                              this.print();
+                            }
+                          }, {
+                            separator: true
+                          }, {
+                            textKey: 'downloadPNG',
+                            onclick: function () {
+                                this.exportChart();
+                            }
+                        }, {
+                            textKey: 'downloadPDF',
+                            onclick: function () {
+                                this.exportChart({
+                                    type: 'application/pdf'
+                                });
+                            }
+                        }, {
+                            text: Highcharts.getOptions().lang.downloadCSV || "Download CSV Excel file",
+                            onclick: function () {
+                                Highcharts.post('http://www.highcharts.com/studies/csv-export/csv.php', {
+                                    csv: this.getCSV()
+                                });
+                            }
+                        }]
+                    }
+                }
+            }//end of exporting csv
+
+            }; //option ends
+
+           $('#container').highcharts(Highcharts.merge(options));
+
+         });//end of cvs function
+           $('#downloadcsv').click(function () {            
+            window.open(url);
+           });//end of download function
+       
+      });//end of document ready function
+      
+      </script>
+   </head>
+   <body>
+
+<div id="container" style="min-width: 310px; height: 500px; margin: 0 auto">
+</div><center><button id="downloadcsv" class="newton_download_csv">Download CSV</button></center>
+</body>
+</html>

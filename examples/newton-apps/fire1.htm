@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Fire Department | City of Newton</title>
+
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script src="../../js/highcharts.js"></script>
+<script src="../../js/modules/exporting.js"></script>
+<script src="../../js/modules/data.js"></script>
+      <style type="text/css">
+${demo.css}
+      </style>
+      <style>.highcharts-subtitle{font-size:small;}</style>
+      <script type="text/javascript">
+$(document).ready(function() {
+       var url ='http://apps.newtonma.gov/apps/highcharts/csv/fire.csv'
+      //$('#div1').load('http://apps.newtonma.gov/apps/highcharts/csv/fire.csv');
+      $.get(url, function(csv) {
+
+      var options = { 
+
+        chart: {
+               type: 'column',
+               style: {
+
+                 fontSize: '20px'
+                 },
+                 zoomType: 'x'
+                  
+        },
+                title: {
+                text: 'Fire Department'
+        },
+                 subtitle: {
+                text: 'City of Newton',
+                
+        },
+            credits: {
+            text: 'newtonma.gov',
+            href: 'http://www.newtonma.gov'
+        },
+                        
+               yAxis: {
+                  //tickInterval: 20,
+                 title: {
+                  text: ' ',                              
+                 },
+               labels: {
+                format: '{value}'
+                }  
+                  //minorTickInterval : 1,
+                  //minTickInterval : 20
+                  
+          },
+               xAxis: {
+                  type: 'category',
+                  title: {
+                  //text: options[0].data,   
+                  text: ' '
+                         
+                  },
+                  labels: {
+                  rotation: 20
+                 //categories: options[0].data                             
+                  }, 
+				                   
+                  //minorTickInterval : 1
+                  //minTickInterval : 20
+                  
+    
+          },
+
+            data: {
+                switchRowsAndColumns: true, 
+                endRow:3,           
+              seriesMapping: [{ }],
+                   csv: csv,
+              itemDelimiter: ','
+              }//end of data
+            }; //option ends
+
+           $('#container').highcharts(Highcharts.merge(options));
+
+         });//end of cvs function
+		 
+           $('#downloadcsv').click(function () {            
+            window.open(url);
+           });//end of download function
+      });//end of document ready function
+      
+      </script>
+   </head>
+   <body>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<button id="downloadcsv">Download CSV</button>
+
+   </body>
+</html>

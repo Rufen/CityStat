@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>csv sample</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="../../js/modules/exporting.js"></script>
+        <script type="text/javascript" src="http://code.highcharts.com/modules/data.js"></script>
+        
+        
+        <!-- 2. Add the JavaScript to initialize the chart on document ready -->
+        <script type="text/javascript">
+        $(document).ready(function() {
+          var url='http://apps.newtonma.gov/apps/highcharts/csv/fire.csv'
+            $.get(url, function(csv) {
+                $('#container').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    credits: {
+                        text:'newtonma.gov',
+                        url:'http://www.newtonma.gov'
+                    },
+                    data: {
+                        csv: csv,
+                        switchRowsAndColumns: true
+                    },
+                    title: {
+                        text: 'Fire Department | City of Newton'
+                    },
+                    subtitle: {
+                        text:'1000 Commonwealth Ave. Newton MA'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Units'
+                        }
+                    },
+                    xAxis: {
+                       labels: {
+                        rotation: 20
+                        }
+                    }
+                });
+            });
+            
+           $("#downloadcsv").click(function(){
+            window.open(url);
+           });
+        });
+        </script>
+        
+    </head>
+    <body>
+        
+        <!-- 3. Add the container -->
+        <div id="container" style="width: 800px; height: 400px; margin: 0 auto">
+
+           
+        </div>
+        
+       <div style="text-align:center;"><button id="downloadcsv">Download CSV</button></div>         
+    </body>
+</html>

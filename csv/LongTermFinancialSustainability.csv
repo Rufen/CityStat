@@ -1,0 +1,21 @@
+Dept,Metric,Goal,Current,
+Assessing,% of abatements applied for  (Less than 5%),5,82,0
+Assessing,% of assessment challenges made to Appellate Tax Board (Less than 25%),25,23,0
+Assessing,% of assessment challenges upheld by Appellate Tax Board (More than 85%),85,93,0
+Assessing,# exemptions applied for,,593,0
+Assessing,# of exemptions issued,,443,0
+Procurement,Amount of $ saved through prompt pay discount,,1360.39,0
+Procurement,Amount of $ lost through prompt pay discount,,2172.94,0
+Procurement,Amount of $ saved by going out to bid,,616.985.85,0
+Treasury,% of bills being paid online,85,83,0
+Treasury,% of bills paid via mail/in person,,17,0
+Treasury,% of committments collected,100,99,0
+Treasury,# of payments received,,23257,0
+Treasury,# of payments processed within 5 days of receipt,100,100,0
+Treasury,# of excise refunds received,,162,0
+Treasury,# of excise refunds processed within 2 weeks of adjustment issuance,100,98,0
+DPW: Utilities,# of HCF's purchased,,390229,0
+DPW: Utilities,# of HCF's billed,,182627,0
+DPW: Utilities,# of HCF's sent as flow: waster water n/a,,0,0
+DPW: Utilities,# of second meters installed,,1,0
+DPW: Utilities,Amount of unaccounted for water 14--32%,12,32,0

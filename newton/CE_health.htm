@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Community Engagement: Health | City of Newton</title>	  
+	  <link rel="stylesheet" type="text/css" href="../css/newton.css">
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script src="../js/highcharts.js"></script>
+      <script src="../js/modules/exporting.js"></script>
+	  <script src="../js/modules/data.js"></script>
+      <script type="text/javascript">
+		$(document).ready(function() {
+       
+			var url='http://apps.newtonma.gov/apps/highcharts/newton/csv/CommunityEngagement.csv'
+			$.get(url, function(csv) {
+		var options = { 
+
+        chart: {
+               type: 'column',
+				borderWidth: 2,
+				plotBorderWidth: 1,
+			   marginTop:'100',
+			   marginBottom: '150',
+			   height:'500',
+               style: {
+
+                 fontSize: '20px'
+                 },
+                 zoomType: 'x'
+                  
+        },
+                title: {
+                text: 'Community Engagement<br>Health & Human Services'
+        },
+                 subtitle: {
+                text: '<a href="http://www.newtonma.gov">City of Newton, MA</a>',
+                
+        },
+               
+            credits: {
+            text: 'newtonma.gov',
+            href: 'http://www.newtonma.gov'
+        },              
+        yAxis: {
+                  //tickInterval: 20,
+                  title: {
+                  text: 'Value',                              
+                 },
+               labels: {
+                format: '{value}'
+                }  
+                  //minorTickInterval : 1,
+                  //minTickInterval : 20
+                  
+          },
+               xAxis: {
+                  //tickInterval:3,
+                  //title: {
+                  //text: options[0].data,   
+                  //text: ' '
+                         
+                  //},
+				  categories: ['Goals ', 'Mar 15', 'Apr 15', 'May 15', 'Jun 15', 'Jul 15', 'Aug 15', 'Sept 15', 'Oct 15', 'Nov 15', 'Dec 15']
+                  //labels: {
+                  //rotation: 20
+                 //categories: options[0].data                             
+                 // }
+
+          },
+		plotOptions: {
+    column: {
+        dataLabels: {
+            enabled: true
+        }
+    }
+},
+	        tooltip: {
+            shared: true,
+            useHTML: true,
+            //headerFormat: '<small>{point.key}</small><table>',
+			headerFormat: '<u>{point.x}</u><table>',
+            pointFormat: '<tr><td style="color: {series.color}">{series.name}: </td>' +
+                '<td style="text-align: right">{point.y} </td></tr>',
+            footerFormat: '</table>',
+            valueDecimals: 0
+        },
+          data: {
+                switchRowsAndColumns: true, 
+				//startRow: 10,
+				endRow: 10, 
+				startColumn:1,
+				endColumn: 12,			
+              seriesMapping: [{ }],
+                   csv: csv,
+              itemDelimiter: ','
+          },//end of data
+          exporting: {
+                buttons: {
+                    contextButton: {
+                        menuItems: [{
+                            textKey: 'printChart',
+                            onclick: function () {
+                              this.print();
+                            }
+                          }, {
+                            separator: true
+                          }, {
+                            textKey: 'downloadPNG',
+                            onclick: function () {
+                                this.exportChart();
+                            }
+                        }, {
+                            textKey: 'downloadPDF',
+                            onclick: function () {
+                                this.exportChart({
+                                    type: 'application/pdf'
+                                });
+                            }
+                        }, {
+                            text: Highcharts.getOptions().lang.downloadCSV || "Download CSV Excel file",
+                            onclick: function () {
+                                Highcharts.post('http://www.highcharts.com/studies/csv-export/csv.php', {
+                                    csv: this.getCSV()
+                                });
+                            }
+                        }]
+                    }
+                }
+            }//end of exporting csv
+
+            }; //option ends
+
+           $('#container').highcharts(Highcharts.merge(options));
+		   var chart = $('#container').highcharts();
+			var series = chart.series[0];var series1 = chart.series[1];var series2 = chart.series[2];var series3 = chart.series[3];var series4 = chart.series[4];var series5 = chart.series[5];var series6 = chart.series[6];
+			var series7 = chart.series[7];var series8 = chart.series[8];
+			series.remove();series1.remove();series2.remove();series3.remove();series4.remove();series5.remove();series6.remove();series7.remove();series8.remove();
+         });//end of cvs function
+           $('#downloadcsv').click(function () {            
+            window.open(url);
+           });//end of download function
+       
+      });//end of document ready function
+      
+      </script>
+   </head>
+   <body>
+
+<div id="container" style="min-width: 310px; height: 500px; margin: 0 auto">
+</div><center><button id="downloadcsv" class="newton_download_csv">Download CSV</button></center>
+</body>
+</html>
